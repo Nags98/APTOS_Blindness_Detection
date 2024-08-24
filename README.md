@@ -83,3 +83,31 @@ Since many discussion suggested and also upon knowledge adding up of data probab
 | Trial | Model                | Experiment | Size | Epochs | Train Kappa | Test Kappa | Validation Kappa | Private Score | Public Score |
 | ----- | -----                | ---------- | ---- | ------ | -------------- | ------------- | ------------------- | ------------ | ------------- |
 |   1   | SeResNext50_32x4d | Resizing, tensor, sharpen + least loss | 224 | 15 | 0.507643 | 0.78652 | 0.77717 | 0.755948 | 0.445672 |
+
+# Conclusion
+
+MODEL : **SeResNext50_32x4d**
+
+DATA : **Resized to 512 x 512, Converted to Tensor, Sharpen**
+
+KAPPA SCORE :
+ - Train : 0.74217
+ - Test : 0.69401
+ - Validation : 0.67644
+ - PRIVATE : 0.863467
+ - PUBLIC : 0.649313
+
+# WayForward
+
+Data Spread across classes in the best model
+
+| Data |  0 | 2 | 1 | 3 | 4 |
+| ----- | -------------- | ------------- | ------------------- | ------------ | ------------- |
+|   Train   | 65% | 19% | 7.9% | 3.4% | 4.1% |
+|  Prediction  |  17% | 63% | 6.3% | 9.9% | 3.6% |
+
+So the inconsistency in the prediction and train data spread can be sorted in upcoming trials for better results.
+
+- With some more epochs I probably believe the models can run well.
+- Also the data spread inconsistency can be killed to also yield better results.
+- Trials with some more augmentation or model architecture updates can yield better results.
